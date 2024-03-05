@@ -15,6 +15,12 @@ public class CesarCipher {
             char letraDesplazada = (char) (((letra - 'A' + desplazamiento) % 26) + 'A');
             alfabetoDesplazado.append(letraDesplazada);
         }
+        // Ajustar el inicio del alfabeto desplazado según el desplazamiento
+        for (int i = 0; i < desplazamiento; i++) {
+            char letra = alfabetoDesplazado.charAt(0);
+            alfabetoDesplazado.deleteCharAt(0);
+            alfabetoDesplazado.append(letra);
+        }
         System.out.println(alfabetoNormal.toString() + "\t" + alfabetoDesplazado.toString());
 
         // Cifrar el mensaje
